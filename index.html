@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRINTHUB CYBER - Your One Stop Printing Solution</title>
+    <!-- Google Fonts for Bold Poster Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,800;0,900;1,800&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --poster-yellow: #FFCC00;
+            --poster-dark-yellow: #E5B800;
+            --poster-dark: #12161A;
+            --poster-navy: #0B132B;
+            --poster-light: #F4F6F9;
+            --poster-white: #FFFFFF;
+            --poster-accent-blue: #0088CC;
+            --poster-green: #25D366;
+            --border-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--poster-light);
+            color: var(--poster-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Top Announcement & Location Bar */
+        .top-bar {
+            background: var(--poster-dark);
+            color: var(--poster-yellow);
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            text-align: center;
+            flex-wrap: wrap;
+            border-bottom: 3px solid var(--poster-yellow);
+        }
+
+        .top-bar span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        
+        header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--poster-white);
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo-area {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--poster-navy);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .brand-name span {
+            color: #D9381E; /* matches the red accent in the poster print icon */
+        }
+
+        .brand-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.6rem;
+            color: #555555;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--poster-navy);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--poster-dark-yellow);
+        }
+
+        .cta-btn-nav {
+            background: var(--poster-yellow);
+            color: var(--poster-dark);
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 800 !important;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+            transition: var(--transition);
+        }
+
+        .cta-btn-nav:hover {
+            background: var(--poster-navy);
+            color: var(--poster-yellow);
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: var(--poster-navy);
+            font-size: 1.5rem;
+        }
+
+        .hero {
+            position: relative;
+            background: var(--poster-white);
+            color: var(--poster-navy);
+            padding: 80px 20px 90px;
+            text-align: center;
+            overflow: hidden;
+            border-bottom: 6px solid var(--poster-yellow);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 20%, rgba(255, 204, 0, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .customer-week-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--poster-yellow);
+            color: var(--poster-navy);
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+            animation: bounceBadge 2s infinite;
+        }
+
+        @keyframes bounceBadge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            color: var(--poster-navy);
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #FFCC00, #E5B800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle-banner {
+            max-width: 700px;
+            margin: 0 auto 35px;
+            background: var(--poster-light);
+            padding: 20px 30px;
+            border-radius: 12px;
+            border-left: 5px solid var(--poster-yellow);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+        }
+
+        .hero-subtitle-banner p {
+            font-size: 1.1rem;
+            color: #333333;
+            font-weight: 600;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-yellow {
+            background: var(--poster-yellow);
+            color: var(--poster-navy);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-yellow:hover {
+            background: var(--poster-navy);
+            color: var(--poster-yellow);
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp-main {
+            background: var(--poster-green);
+            color: var(--poster-white);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+
+        .btn-whatsapp-main:hover {
+            background: #20ba5a;
+            transform: translateY(-3px);
+            color: var(--poster-white);
+        }
+
+        .poster-pills-section {
+            background: var(--poster-navy);
+            padding: 30px 20px;
+            color: var(--poster-white);
+        }
+
+        .pills-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .poster-pill {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 204, 0, 0.4);
+            padding: 10px 24px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--poster-yellow);
+            transition: var(--transition);
+        }
+
+        .poster-pill:hover {
+            background: var(--poster-yellow);
+            color: var(--poster-navy);
+            transform: scale(1.05);
+        }
+
+        .owner-section {
+            max-width: 1100px;
+            margin: 90px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--poster-navy);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 5px;
+            background: var(--poster-yellow);
+            border-radius: 3px;
+        }
+
+        .section-header p {
+            color: #555555;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .owner-card {
+            background: var(--poster-white);
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            overflow: hidden;
+            border: 2px solid #eaeaea;
+        }
+
+        .owner-img-wrap {
+            position: relative;
+            background: var(--poster-navy);
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .owner-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .owner-img-wrap:hover img {
+            transform: scale(1.04);
+        }
+
+        .owner-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(18, 22, 26, 0.9);
+            backdrop-filter: blur(8px);
+            padding: 10px 20px;
+            border-radius: 50px;
+            color: var(--poster-yellow);
+            font-size: 0.85rem;
+            font-weight: 800;
+            border: 1px solid var(--poster-yellow);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .owner-info {
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .owner-pill-tag {
+            background: var(--poster-yellow);
+            color: var(--poster-navy);
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 18px;
+            width: max-content;
+        }
+
+        .owner-info h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--poster-navy);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .owner-info p {
+            color: #444444;
+            margin-bottom: 25px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .owner-contact-box {
+            background: var(--poster-light);
+            padding: 22px;
+            border-radius: 12px;
+            border-left: 5px solid var(--poster-yellow);
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .owner-contact-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--poster-navy);
+        }
+
+        .owner-contact-row i {
+            width: 32px; height: 32px;
+            background: var(--poster-yellow);
+            color: var(--poster-navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .services-section {
+            max-width: 1200px;
+            margin: 90px auto;
+            padding: 0 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--poster-white);
+            padding: 40px 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-top: 6px solid #eaeaea;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+            border-top-color: var(--poster-yellow);
+        }
+
+        .service-icon-box {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: rgba(255, 204, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--poster-navy);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon-box {
+            background: var(--poster-yellow);
+            transform: scale(1.1) rotate(6deg);
+        }
+
+        .service-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--poster-navy);
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #555555;
+            margin-bottom: 22px;
+        }
+
+        .service-action-link {
+            font-weight: 800;
+            color: var(--poster-navy);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .service-action-link:hover {
+            color: var(--poster-accent-blue);
+            gap: 10px;
+        }
+
+        .quote-banner-section {
+            background: var(--poster-yellow);
+            color: var(--poster-navy);
+            padding: 60px 20px;
+            text-align: center;
+            margin: 60px 0;
+            box-shadow: inset 0 15px 30px rgba(0,0,0,0.05);
+        }
+
+        .quote-banner-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .quote-banner-content i {
+            font-size: 2.5rem;
+            color: #D9381E;
+            margin-bottom: 15px;
+        }
+
+        .quote-banner-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .quote-banner-content p {
+            font-size: 1.2rem;
+            font-weight: 700;
+            opacity: 0.95;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-container {
+            background: var(--poster-white);
+            width: 100%;
+            max-width: 550px;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            position: relative;
+            transform: translateY(20px);
+            transition: var(--transition);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: translateY(0);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 20px; right: 20px;
+            background: var(--poster-light);
+            border: none;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .modal-close-btn:hover {
+            background: var(--poster-yellow);
+        }
+
+        .modal-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--poster-navy);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .modal-desc {
+            font-size: 0.95rem;
+            color: #555555;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            color: var(--poster-navy);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #E0E0E0;
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+            background: var(--poster-light);
+        }
+
+        .form-input:focus {
+            border-color: var(--poster-yellow);
+            background: var(--poster-white);
+            box-shadow: 0 0 0 4px rgba(255, 204, 0, 0.2);
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .submit-whatsapp-btn {
+            width: 100%;
+            background: var(--poster-green);
+            color: var(--poster-white);
+            padding: 16px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            box-shadow: 0 6px 20px rgba(37,211,102,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-whatsapp-btn:hover {
+            background: #20ba5a;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: var(--poster-navy);
+            color: var(--poster-white);
+            padding: 70px 20px 30px;
+            border-top: 5px solid var(--poster-yellow);
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--poster-yellow);
+            text-transform: uppercase;
+        }
+
+        .footer-col p {
+            color: #CCCCCC;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: #CCCCCC;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--poster-yellow);
+            padding-left: 5px;
+        }
+
+        .social-row {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-row a {
+            width: 42px; height: 42px;
+            background: rgba(255,255,255,0.1);
+            color: var(--poster-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-row a:hover {
+            background: var(--poster-yellow);
+            color: var(--poster-navy);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: #888888;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 992px) {
+            .owner-card {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 75px; left: -100%;
+                width: 100%; height: calc(100vh - 75px);
+                background: var(--poster-white);
+                flex-direction: column;
+                justify-content: center;
+                gap: 25px;
+                transition: 0.4s ease;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            }
+            .nav-links.active {
+                left: 0;
+            }
+            .hamburger {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            .hero {
+                padding: 60px 20px 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <span><i class="fa-solid fa-location-dot" style="color: var(--poster-yellow);"></i> Ngong, Ilade Petrol Station Area</span>
+        <span>|</span>
+        <span><i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp Hotline: 0753 267 171</span>
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <div class="brand-logo-area">
+                <a href="#" class="brand-name"><i class="fa-solid fa-print"></i> PRINT<span>HUB</span> CYBER</a>
+                <span class="brand-tagline">Your One Stop Printing Solution</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#owner">Meet The Owner</a></li>
+                <li><a href="#quote-section">Customer Week</a></li>
+                <li><a href="https://wa.me/254753267171?text=Hello%20Printhub%20Cyber,%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="cta-btn-nav"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a></li>
+            </ul>
+            <div class="hamburger" id="hamburgerBtn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="customer-week-pill">
+            <i class="fa-solid fa-heart" style="color: #D9381E;"></i> Happy Customer Service Week!
+        </div>
+        <h1>Happy Customer <span>Service Week</span></h1>
+        <div class="hero-subtitle-banner">
+            <p>This week we celebrate YOU — our amazing customers! Your trust, support, and loyalty keep us going. We appreciate you today and always!</p>
+        </div>
+        <div class="hero-buttons">
+            <button class="btn-yellow" id="openOrderModalBtn">
+                <i class="fa-solid fa-file-lines"></i> Request Quote / Service
+            </button>
+            <a href="https://wa.me/254753267171?text=Hello%20Printhub%20Cyber,%20I%20need%20quick%20printing%20services." target="_blank" class="btn-whatsapp-main">
+                <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <div class="poster-pills-section">
+        <div class="pills-container">
+            <a href="#services" class="poster-pill" style="text-decoration:none;"><i class="fa-solid fa-print"></i> PRINTING</a>
+            <a href="#services" class="poster-pill" style="text-decoration:none;"><i class="fa-solid fa-paint-brush"></i> DESIGN</a>
+            <a href="#services" class="poster-pill" style="text-decoration:none;"><i class="fa-solid fa-book"></i> BINDING</a>
+            <a href="#services" class="poster-pill" style="text-decoration:none;"><i class="fa-solid fa-layer-group"></i> LAMINATING</a>
+            <a href="#services" class="poster-pill" style="text-decoration:none;"><i class="fa-solid fa-globe"></i> CYBER SERVICES & MORE</a>
+        </div>
+    </div>
+
+    <section class="owner-section" id="owner">
+        <div class="section-header">
+            <h2>Meet The Owner</h2>
+            <p>Dedicated leadership committed to excellence and personalized customer service.</p>
+        </div>
+        <div class="owner-card">
+            <div class="owner-img-wrap">
+                <!-- Direct portrait image of owner matching poster aesthetic -->
+                <img src="https://placehold.co/600x750/0B132B/FFCC00?text=Printhub+Cyber+Owner" onerror="this.src='https://placehold.co/600x750/12161A/FFCC00?text=Printhub+Cyber'" alt="Printhub Cyber Owner">
+                <div class="owner-badge">
+                    <i class="fa-solid fa-award" style="color: var(--poster-yellow);"></i> Founder & Managing Director
+                </div>
+            </div>
+            <div class="owner-info">
+                <span class="owner-pill-tag">Leadership & Vision</span>
+                <h3>Welcome to Printhub Cyber</h3>
+                <p>“Behind every successful business is a customer who believed in it. Located right here in Ngong at Ilade Petrol Station, we take pride in delivering premier printing, design, binding, and professional cyber solutions tailored for your growth.”</p>
+                
+                <div class="owner-contact-box">
+                    <div class="owner-contact-row">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Location: Ngong, Ilade Petrol Station Area</span>
+                    </div>
+                    <div class="owner-contact-row">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>WhatsApp / Direct Line: 0753 267 171</span>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="https://wa.me/254753267171?text=Hello,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn-whatsapp-main">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Chat Directly on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <div class="section-header">
+            <h2>Our Professional Services</h2>
+            <p>Everything you need for your business and personal printing solutions.</p>
+        </div>
+        <div class="services-grid">
+            
+            <div class="service-card">
+                <div class="service-icon-box">
+                    <i class="fa-solid fa-print"></i>
+                </div>
+                <h3>Printing</h3>
+                <p>High-resolution digital printing for flyers, posters, business cards, banners, and documents.</p>
+                <a href="#" class="service-action-link trigger-service-modal" data-service="Printing">Book Service <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <!-- Design -->
+            <div class="service-card">
+                <div class="service-icon-box">
+                    <i class="fa-solid fa-paint-brush"></i>
+                </div>
+                <h3>Design</h3>
+                <p>Creative graphic design for logos, flyers, branding, social media posts, and marketing materials.</p>
+                <a href="#" class="service-action-link trigger-service-modal" data-service="Design">Book Service <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <!-- Binding -->
+            <div class="service-card">
+                <div class="service-icon-box">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+                <h3>Binding</h3>
+                <p>Professional document binding including spiral, comb, hardcover, and thermal binding.</p>
+                <a href="#" class="service-action-link trigger-service-modal" data-service="Binding">Book Service <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <!-- Laminating -->
+            <div class="service-card">
+                <div class="service-icon-box">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <h3>Laminating</h3>
+                <p>Protect your important certificates, menus, badges, and posters with gloss and matte lamination.</p>
+                <a href="#" class="service-action-link trigger-service-modal" data-service="Laminating">Book Service <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <!-- Cyber Services & More -->
+            <div class="service-card">
+                <div class="service-icon-box">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+                <h3>Cyber Services & More</h3>
+                <p>Fast internet access, government services, passport photos, typing, scanning, and custom mug printing.</p>
+                <a href="#" class="service-action-link trigger-service-modal" data-service="Cyber Services & More">Book Service <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-banner-section" id="quote-section">
+        <div class="quote-banner-content">
+            <i class="fa-solid fa-quote-left"></i>
+            <h2>Happy Customers Build Stronger Businesses</h2>
+            <p>“Thank you for choosing Printhub Cyber. Your support means everything today and always! Together We Grow.”</p>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-container">
+            <button class="modal-close-btn" id="modalCloseBtn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h2 class="modal-title">Request via WhatsApp</h2>
+            <p class="modal-desc">Fill out the details below. Clicking submit will directly route your order to our WhatsApp (0753 267 171).</p>
+            
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="clientName">Your Full Name</label>
+                    <input type="text" id="clientName" class="form-input" placeholder="e.g., John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="clientPhone">Your Phone Number</label>
+                    <input type="tel" id="clientPhone" class="form-input" placeholder="e.g., 0712345678" required>
+                </div>
+                <div class="form-group">
+                    <label for="serviceSelect">Select Service</label>
+                    <select id="serviceSelect" class="form-input" required>
+                        <option value="">-- Choose a Service --</option>
+                        <option value="Printing">Printing</option>
+                        <option value="Design">Design</option>
+                        <option value="Binding">Binding</option>
+                        <option value="Laminating">Laminating</option>
+                        <option value="Cyber Services & More">Cyber Services & More</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="clientMessage">Project Details / Instructions</label>
+                    <textarea id="clientMessage" class="form-input" placeholder="Specify quantities, sizes, or instructions..."></textarea>
+                </div>
+                <button type="submit" class="submit-whatsapp-btn">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Send to WhatsApp (0753267171)
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="brand-name" style="color: var(--poster-white); margin-bottom: 15px;"><i class="fa-solid fa-print" style="color: var(--poster-yellow);"></i> PRINT<span>HUB</span> CYBER</div>
+                <p>Your one-stop printing solution located in Ngong, Ilade Petrol Station Area. Together We Grow.</p>
+                <div class="social-row">
+                    <a href="https://wa.me/254753267171" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#owner">Meet The Owner</a></li>
+                    <li><a href="#quote-section">Customer Week</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#services">Commercial Printing</a></li>
+                    <li><a href="#services">Graphic Design</a></li>
+                    <li><a href="#services">Binding Solutions</a></li>
+                    <li><a href="#services">Lamination & Cyber</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--poster-yellow); margin-right: 8px;"></i> Ngong, Ilade Petrol Station Area</p>
+                <p><i class="fa-brands fa-whatsapp" style="color: var(--poster-yellow); margin-right: 8px;"></i> 0753 267 171</p>
+                <p><i class="fa-solid fa-envelope" style="color: var(--poster-yellow); margin-right: 8px;"></i> info@printhubcyber.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PRINTHUB CYBER. All rights reserved. Together We Grow.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburgerBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = hamburgerBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburgerBtn.querySelector('i').classList.remove('fa-xmark');
+                hamburgerBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Modal Elements
+        const orderModal = document.getElementById('orderModal');
+        const openOrderModalBtn = document.getElementById('openOrderModalBtn');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+        const orderForm = document.getElementById('orderForm');
+        const serviceSelect = document.getElementById('serviceSelect');
+
+        function openModal(defaultService = '') {
+            orderModal.classList.add('active');
+            if (defaultService) {
+                serviceSelect.value = defaultService;
+            }
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            orderModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (openOrderModalBtn) {
+            openOrderModalBtn.addEventListener('click', () => openModal());
+        }
+        modalCloseBtn.addEventListener('click', closeModal);
+
+        orderModal.addEventListener('click', (e) => {
+            if (e.target === orderModal) {
+                closeModal();
+            }
+        });
+
+        // Trigger Service Modal from Service Cards
+        document.querySelectorAll('.trigger-service-modal').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const serviceName = btn.getAttribute('data-service');
+                openModal(serviceName);
+            });
+        });
+
+        // Form submission direct to WhatsApp (0753267171)
+        orderForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('clientName').value.trim();
+            const phone = document.getElementById('clientPhone').value.trim();
+            const service = document.getElementById('serviceSelect').value;
+            const message = document.getElementById('clientMessage').value.trim();
+
+            const waText = `Hello Printhub Cyber,%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Service:* ${encodeURIComponent(service)}%0A*Details:* ${encodeURIComponent(message)}`;
+            
+            const whatsappUrl = `https://wa.me/254753267171?text=${waText}`;
+            window.open(whatsappUrl, '_blank');
+            closeModal();
+        });
+    </script>
+</body>
+</html>
